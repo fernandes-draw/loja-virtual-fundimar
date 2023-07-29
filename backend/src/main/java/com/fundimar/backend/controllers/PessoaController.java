@@ -13,34 +13,34 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.fundimar.backend.entities.Estado;
-import com.fundimar.backend.services.EstadoService;
+import com.fundimar.backend.entities.Pessoa;
+import com.fundimar.backend.services.PessoaService;
 
 @RestController
-@RequestMapping("/api/estado")
-public class EstadoController {
+@RequestMapping("/api/pessoa")
+public class PessoaController {
 
   @Autowired
-  private EstadoService estadoService;
+  private PessoaService pessoaService;
 
   @GetMapping("/")
-  public List<Estado> buscarTodos() {
-    return estadoService.buscarTodos();
+  public List<Pessoa> buscarTodas() {
+    return pessoaService.buscarTodas();
   }
 
   @PostMapping("/")
-  public Estado inserir(@RequestBody Estado estado) {
-    return estadoService.inserir(estado);
+  public Pessoa inserir(@RequestBody Pessoa pessoa) {
+    return pessoaService.inserir(pessoa);
   }
 
   @PutMapping("/")
-  public Estado alterar(@RequestBody Estado estado) {
-    return estadoService.alterar(estado);
+  Pessoa alterar(@RequestBody Pessoa pessoa) {
+    return pessoaService.alterar(pessoa);
   }
 
   @DeleteMapping("/{id}")
   public ResponseEntity<Void> excluir(@PathVariable("id") Long id) {
-    estadoService.excluir(id);
+    pessoaService.excluir(id);
     return ResponseEntity.ok().build();
   }
 }
