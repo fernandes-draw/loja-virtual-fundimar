@@ -42,7 +42,7 @@ public class ProdutoImagensService {
           String.valueOf(produto.getId()) + file.getOriginalFilename();
 
         Path caminho = Paths.get(
-          "E:/Spring/loja-virtual-fundimar/imagens/" + nomeImagem
+          "E:/Spring/imagens/" + nomeImagem
         );
         Files.write(caminho, bytes);
         produtoimagens.setNome(nomeImagem);
